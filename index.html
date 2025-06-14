@@ -3,28 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buy Oud Perfume</title>
-  <!-- Stripe JS Library -->
+  <title>Oud Perfume Store</title>
   <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      background-color: #222;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #444;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Buy Button -->
   <h1>Oud Perfume</h1>
-  <p>Experience the luxurious scent of authentic oud. Price: £50</p>
-  <button id="checkout-button">Buy Oud Perfume - £50</button>
+  <p>Experience luxury. Price: £35</p>
+  <button id="checkout-button">Buy Now</button>
 
   <script>
     const stripe = Stripe('pk_test_51RZZEbRw26yobeQLMjEHVX1jlbH4ZsaORgIOrEmYvNniGCU62IAfGvfAcxn0x9MUj7dqvDDiet33kiNp7YO82Kq400MnHWvisv');
 
-    const checkoutButton = document.getElementById('checkout-button');
-
-    checkoutButton.addEventListener('click', function () {
+    document.getElementById('checkout-button').addEventListener('click', function () {
       stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1RZsrzRw26yobeQLB2rI4LSV', quantity: 1 }],
+        lineItems: [{
+          price: 'price_1RZsrzRw26yobeQLB2rI4LSV', // Make sure this price ID is correct and from Stripe Dashboard
+          quantity: 1
+        }],
         mode: 'payment',
         successUrl: window.location.href + '?success=true',
-        cancelUrl: window.location.href + '?canceled=true',
+        cancelUrl: window.location.href + '?canceled=true'
       }).then(function (result) {
         if (result.error) {
           alert(result.error.message);
