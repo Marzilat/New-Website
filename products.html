@@ -115,6 +115,41 @@
       letter-spacing: 1px;
       margin-top: 60px;
     }
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: background 0.3s ease;
+}
+
+.btn.view {
+  background: #eee;
+  color: #111;
+}
+
+.btn.view:hover {
+  background: #ddd;
+}
+
+.btn.buy {
+  background: #c8102e;
+  color: white;
+}
+
+.btn.buy:hover {
+  background: #a30d23;
+}
+
   </style>
 </head>
 <body>
@@ -137,36 +172,66 @@
         <h3>Product 1</h3>
         <p>Elegant and modern design for your home.</p>
         <p class="price">£29.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
       <div class="product-card">
         <img src="https://via.placeholder.com/300x200?text=Product+2" alt="Product 2" />
         <h3>Product 2</h3>
         <p>Stylish accessory to brighten your space.</p>
         <p class="price">£34.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
       <div class="product-card">
         <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 3" />
         <h3>Product 3</h3>
         <p>Crafted with quality and simplicity.</p>
         <p class="price">£39.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
       <div class="product-card">
         <img src="https://via.placeholder.com/300x200?text=Product+4" alt="Product 4" />
         <h3>Product 4</h3>
         <p>Perfect blend of function and style.</p>
         <p class="price">£24.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
       <div class="product-card">
         <img src="https://via.placeholder.com/300x200?text=Product+5" alt="Product 5" />
         <h3>Product 5</h3>
         <p>Add a touch of elegance to your room.</p>
         <p class="price">£44.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
       <div class="product-card">
         <img src="https://via.placeholder.com/300x200?text=Product+6" alt="Product 6" />
         <h3>Product 6</h3>
         <p>Minimalist design that fits any decor.</p>
         <p class="price">£31.99</p>
+        <div class="product-buttons">
+  <a href="#" class="btn view">View Product</a>
+  <a href="#" class="btn buy">Buy Now</a>
+</div>
+
       </div>
     </div>
   </section>
