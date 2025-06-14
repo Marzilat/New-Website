@@ -1,55 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oud Perfume Store</title>
-  <script src="https://js.stripe.com/v3/"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxury Perfume Shop</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #d4af37; /* gold */
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
       text-align: center;
-      padding: 50px;
+      margin-bottom: 40px;
+      font-size: 3em;
+      letter-spacing: 3px;
     }
-    button {
-      background-color: #222;
-      color: white;
-      padding: 15px 30px;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .product {
+      background-color: #1e1e1e;
+      border: 2px solid #d4af37;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #d4af37aa;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product h2 {
+      margin: 10px 0 5px;
+      font-size: 1.5em;
+    }
+    .product p.description {
+      font-size: 1em;
+      color: #ccc;
+      margin-bottom: 15px;
+      min-height: 60px;
+    }
+    .product p.price {
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+    button.buy-btn {
+      background-color: #d4af37;
+      color: #121212;
       border: none;
-      font-size: 16px;
+      padding: 12px 0;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 8px;
       cursor: pointer;
-      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #444;
+    button.buy-btn:hover {
+      background-color: #b78e23;
+    }
+    .message {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+    .message.success {
+      background-color: #224422;
+      color: #a6d785;
+      border: 2px solid #a6d785;
+    }
+    .message.error {
+      background-color: #662222;
+      color: #e58e8e;
+      border: 2px solid #e58e8e;
     }
   </style>
 </head>
 <body>
+  <h1>Luxury Perfume Shop</h1>
 
-  <h1>Oud Perfume</h1>
-  <p>Experience luxury. Price: £35</p>
-  <button id="checkout-button">Buy Now</button>
+  <div id="message-container"></div>
+
+  <div class="products">
+    <!-- Products will be inserted here by JS -->
+  </div>
+
+  <!-- Stripe JS Library -->
+  <script src="https://js.stripe.com/v3/"></script>
 
   <script>
+    // Your Stripe public key (replace with your own)
     const stripe = Stripe('pk_test_51RZZEbRw26yobeQLMjEHVX1jlbH4ZsaORgIOrEmYvNniGCU62IAfGvfAcxn0x9MUj7dqvDDiet33kiNp7YO82Kq400MnHWvisv');
 
-    document.getElementById('checkout-button').addEventListener('click', function () {
-      stripe.redirectToCheckout({
-        lineItems: [{
-          price: 'price_1RZsrzRw26yobeQLB2rI4LSV', // Make sure this price ID is correct and from Stripe Dashboard
-          quantity: 1
-        }],
-        mode: 'payment',
-        successUrl: window.location.href + '?success=true',
-        cancelUrl: window.location.href + '?canceled=true'
-      }).then(function (result) {
-        if (result.error) {
-          alert(result.error.message);
-        }
+    // Products data
+    const products = [
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Royal Oud', price: 50 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Desert Rose', price: 45 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Midnight Jasmine', price: 40 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Sands of Amber', price: 48 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Golden Musk', price: 42 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Arabian Nights', price: 55 },
+      { id: 'price_1RZsrzRw26yobeQLB2rI4LSV', name: 'Velvet Jasmine', price: 47 }
+    ];
+
+    // Placeholder description and image (same for all products)
+    const description = "Experience the luxurious scent crafted from the finest ingredients.";
+    const imageUrl = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80";
+
+    const productsContainer = document.querySelector('.products');
+    const messageContainer = document.getElementById('message-container');
+
+    // Show success or cancel message based on URL query
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success')) {
+      showMessage('Thank you for your purchase! Your order is confirmed.', 'success');
+    } else if (urlParams.get('canceled')) {
+      showMessage('Payment was canceled. You can try again anytime.', 'error');
+    }
+
+    // Function to display messages
+    function showMessage(text, type) {
+      messageContainer.innerHTML = `<div class="message ${type}">${text}</div>`;
+    }
+
+    // Create product cards
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+
+      productDiv.innerHTML = `
+        <img src="${imageUrl}" alt="${product.name}" />
+        <h2>${product.name}</h2>
+        <p class="description">${description}</p>
+        <p class="price">£${product.price.toFixed(2)}</p>
+        <button class="buy-btn">Buy ${product.name} - £${product.price.toFixed(2)}</button>
+      `;
+
+      productsContainer.appendChild(productDiv);
+
+      const buyBtn = productDiv.querySelector('button.buy-btn');
+      buyBtn.addEventListener('click', () => {
+        stripe.redirectToCheckout({
+          lineItems: [{ price: product.id, quantity: 1 }],
+          mode: 'payment',
+          successUrl: window.location.origin + window.location.pathname + '?success=true',
+          cancelUrl: window.location.origin + window.location.pathname + '?canceled=true',
+        }).then(function(result) {
+          if (result.error) {
+            alert(result.error.message);
+          }
+        });
       });
     });
   </script>
-
 </body>
 </html>
+
