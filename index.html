@@ -88,3 +88,28 @@
   </script>
 </body>
 </html>
+
+<!-- Stripe JS Library -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<!-- Buy Button -->
+<button id="checkout-button">Buy Oud Perfume - £50</button>
+
+<script>
+  const stripe = Stripe('YOUR_PUBLISHABLE_KEY'); // Get this from your Stripe dashboard
+
+  const checkoutButton = document.getElementById('checkout-button');
+
+  checkoutButton.addEventListener('click', function () {
+    stripe.redirectToCheckout({
+      lineItems: [{ price: 'price_1RZsrzRw26yobeQLB2rI4LSV', quantity: 1 }],
+      mode: 'payment',
+      successUrl: window.location.href + '?success=true',
+      cancelUrl: window.location.href + '?canceled=true',
+    }).then(function (result) {
+      if (result.error) {
+        alert(result.error.message);
+      }
+    });
+  });
+</script>
