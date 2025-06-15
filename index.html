@@ -66,7 +66,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 120px 20px;
+      padding: 80px 20px 20px 20px; /* shifted text upwards by reducing top padding */
       color: #fff;
     }
     .hero h1 {
@@ -80,6 +80,20 @@
       max-width: 600px;
       margin: 0 auto;
       color: #fff;
+    }
+    /* Divider line styling */
+    .divider-line {
+      display: block;
+      width: 100vw; /* full viewport width */
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0 0 0; /* space above the line */
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      object-fit: contain;
     }
 
     /* Intro Section */
@@ -145,14 +159,14 @@
   <section class="hero">
     <h1>Elevate Your Living Space</h1>
     <p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
+    <img src="images/whitedividerlineforhomepage.png" alt="Divider line" class="divider-line" />
   </section>
 
-<section class="intro">
-  <h2>Thoughtfully Chosen. Beautifully Made.</h2>
-  <p>From timeless decor pieces to modern accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
-  <a href="products.html" class="shop-btn">Shop Now!</a>
-</section>
-
+  <section class="intro">
+    <h2>Thoughtfully chosen, beautifully made.</h2>
+    <p>From timeless decor pieces to modern accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
+    <a href="products.html" class="shop-btn">Shop Now!</a>
+  </section>
 
   <footer>
     &copy; 2025 HomeStyle. All rights reserved.
