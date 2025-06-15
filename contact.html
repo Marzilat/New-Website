@@ -78,6 +78,29 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ensures input text font matches */
+    }
+
+    /* Placeholder styling for all inputs and textarea */
+    ::placeholder {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      color: #888;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      color: #888;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      color: #888;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      color: #888;
     }
 
     .contact form button {
