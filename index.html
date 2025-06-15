@@ -9,10 +9,24 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center fixed;
-      background-size: cover;
       color: #111;
       line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+      z-index: 0;
+    }
+
+    /* Background image and dark overlay using pseudo-element */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
     }
 
     /* Navigation Bar */
@@ -54,7 +68,6 @@
       text-align: center;
       padding: 120px 20px;
       color: #fff;
-      background: rgba(0, 0, 0, 0.5); /* dark overlay only behind hero text */
     }
     .hero h1 {
       font-size: 3.5em;
