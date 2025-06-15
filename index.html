@@ -9,7 +9,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fff;
+      background: url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #111;
       line-height: 1.6;
     }
@@ -45,16 +46,15 @@
       transition: color 0.3s ease;
     }
     nav ul li a:hover {
-      color: #c8102e; /* subtle red */
+      color: #c8102e;
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                  url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: #fff;
       text-align: center;
       padding: 120px 20px;
+      color: #fff;
+      background: rgba(0,0,0,0.5); /* subtle dark overlay for contrast */
     }
     .hero h1 {
       font-size: 3.5em;
@@ -66,7 +66,7 @@
       font-size: 1.25em;
       max-width: 600px;
       margin: 0 auto;
-      color: #b0d9f6; /* light blue */
+      color: #b0d9f6;
     }
 
     /* Intro Section */
@@ -75,6 +75,8 @@
       margin: 60px auto 80px auto;
       padding: 0 20px;
       text-align: center;
+      background-color: rgba(255, 255, 255, 0.6); /* light background so text is readable */
+      border-radius: 10px;
     }
     .intro h2 {
       font-size: 2.5em;
@@ -93,7 +95,7 @@
       display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
-      background-color: #c8102e; /* your subtle red */
+      background-color: #c8102e;
       color: white;
       font-weight: 700;
       font-size: 1.1em;
@@ -102,13 +104,13 @@
       transition: background-color 0.3s ease;
     }
     .shop-btn:hover {
-      background-color: #a30d23; /* darker red on hover */
+      background-color: #a30d23;
     }
 
     /* Footer */
     footer {
       background: #000;
-      color: #b5e7a0; /* soft green */
+      color: #b5e7a0;
       text-align: center;
       padding: 18px 10px;
       font-size: 0.9em;
