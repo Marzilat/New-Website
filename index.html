@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">More actions
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HomeStyle - Modern Home Accessories</title>
+  <title>Modern Home Accessories</title>
   <style>
     /* Base styling */
     body {
@@ -11,92 +11,133 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #fff;
       color: #111;
+      line-height: 1.6;
     }
 
     /* Navigation Bar */
     nav {
-      background-color: #000;
-      padding: 10px 20px;
+      background: #000;
+      padding: 15px 30px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
     nav .logo {
-      font-weight: bold;
-      font-size: 24px;
       color: #fff;
-      text-decoration: none;
+      font-size: 1.8em;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
-
     nav ul {
       list-style: none;
+      display: flex;
+      gap: 25px;
       margin: 0;
       padding: 0;
-      display: flex;
     }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
     nav ul li a {
-      color: #fff;
+      color: #eee;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
-
     nav ul li a:hover {
-      color: #ddd;
+      color: #c8102e; /* subtle red */
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center/cover;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: #fff;
       text-align: center;
       padding: 120px 20px;
     }
-
     .hero h1 {
-      font-size: 48px;
-      margin: 0 0 20px;
+      font-size: 3.5em;
+      margin-bottom: 0.4em;
+      font-weight: 800;
+      letter-spacing: 1.5px;
     }
-
     .hero p {
-      font-size: 20px;
+      font-size: 1.25em;
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.5;
+      color: #b0d9f6; /* light blue */
+    }
+
+    /* Intro Section */
+    .intro {
+      max-width: 900px;
+      margin: 60px auto 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .intro h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      color: #000;
+    }
+    .intro p {
+      font-size: 1.1em;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Shop Now Button */
+    .shop-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #c8102e; /* your subtle red */
+      color: white;
+      font-weight: 700;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .shop-btn:hover {
+      background-color: #a30d23; /* darker red on hover */
     }
 
     /* Footer */
     footer {
+      background: #000;
+      color: #b5e7a0; /* soft green */
       text-align: center;
-      padding: 20px;
-      background-color: #000;
-      color: #fff;
-      font-size: 14px;
+      padding: 18px 10px;
+      font-size: 0.9em;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="logo">HomeStyle</a>
+    <div class="logo">HomeStyle</div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <h1>Welcome to HomeStyle</h1>
-    <p>Discover unique and elegant home accessories that bring comfort and beauty to your living space.</p>
+    <h1>Elevate Your Living Space</h1>
+    <p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
+  </section>
+
+  <section class="intro">
+    <h2>Welcome to HomeStyle</h2>
+    <p>From timeless décor pieces to contemporary accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
+    <a href="products.html" class="shop-btn">Shop Now!</a>
   </section>
 
   <footer>
