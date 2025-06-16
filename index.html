@@ -75,25 +75,25 @@
       margin: 0 auto;
     }
 
-  hr.section-divider {
-  height: 3px;
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  width: 0;
-  max-width: 900px;
-  margin: 0 auto;
-  animation: growLine 6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-  transform-origin: center;
-}
+    hr.section-divider {
+      height: 3px;
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: growLine 6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      transform-origin: center;
+    }
 
-@keyframes growLine {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+    @keyframes growLine {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
 
     .intro {
       max-width: 900px;
@@ -124,11 +124,24 @@
       font-size: 1.1em;
       text-decoration: none;
       border-radius: 6px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.4s ease;
+      animation: pulseGlow 6s ease-in-out infinite;
+      cursor: pointer;
     }
 
     .shop-btn:hover {
       background-color: #a30d23;
+      box-shadow: 0 0 12px 3px rgba(200, 16, 46, 0.7);
+      animation: none;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 5px 0 rgba(200, 16, 46, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 15px 5px rgba(200, 16, 46, 0.9);
+      }
     }
 
     footer {
