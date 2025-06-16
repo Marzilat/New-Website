@@ -73,16 +73,17 @@
       height: 3px;
       background: rgba(255, 255, 255, 0.7);
       border: none;
-      width: 0; /* start collapsed */
+      width: 0;
       max-width: 900px;
       margin: 0px auto;
-      animation: growLine 15s ease-out forwards;
+      animation: growLine 6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      will-change: width;
     }
 
     @keyframes growLine {
       from {
         width: 0;
-        opacity: 0.5;
+        opacity: 0.4;
       }
       to {
         width: 100%;
