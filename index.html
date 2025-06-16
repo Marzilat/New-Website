@@ -66,7 +66,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 80px 20px 20px 20px; /* shifted text upwards by reducing top padding */
+      padding: 80px 20px 20px 20px;
       color: #fff;
     }
     .hero h1 {
@@ -82,13 +82,23 @@
       color: #fff;
     }
 
-    /* Clean horizontal divider */
+    /* Animated Divider Line */
     .section-divider {
       border: none;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.3);
+      height: 5px; /* Thicker line */
+      background: rgba(255, 255, 255, 0.4);
       margin: 40px auto;
       width: 80%;
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        background: rgba(255, 255, 255, 0.4);
+      }
+      50% {
+        background: rgba(255, 255, 255, 0.85);
+      }
     }
 
     /* Intro Section */
