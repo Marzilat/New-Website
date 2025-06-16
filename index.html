@@ -5,166 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modern Home Accessories</title>
 <style>
-body {
-margin: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #111;
-line-height: 1.6;
-position: relative;
-min-height: 100vh;
-z-index: 0;
-}
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+  }
 
-body::before {
-content: "";
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center fixed;
-background-size: cover;
-z-index: -1;
-}
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/aes-VGr1zBtxVoc-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+  }
 
-nav {
-background: #000;
-padding: 15px 30px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: sticky;
-top: 0;
-z-index: 10;
-}
-nav .logo {
-color: #fff;
-font-size: 1.8em;
-font-weight: 700;
-letter-spacing: 2px;
-}
-nav ul {
-list-style: none;
-display: flex;
-gap: 25px;
-margin: 0;
-padding: 0;
-}
-nav ul li a {
-color: #eee;
-text-decoration: none;
-font-weight: 600;
-transition: color 0.3s ease;
-}
-nav ul li a:hover {
-color: #c8102e;
-}
+  nav {
+    background: #000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav .logo {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #c8102e;
+  }
 
-.hero {
-text-align: center;
-      padding: 50px 20px 20px 20px; /* reduced top padding */
-      padding: 60px 20px 20px 20px;
-color: #fff;
-}
-.hero h1 {
-font-size: 3.5em;
-margin-bottom: 0.4em;
-font-weight: 800;
-letter-spacing: 1.5px;
-}
-.hero p {
-font-size: 1.25em;
-max-width: 600px;
-margin: 0 auto 40px auto;
-color: #fff;
-}
+  .hero {
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.4em;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  .hero p {
+    font-size: 1.25em;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #fff;
+  }
 
-    .section-divider {
-      border: none;
-      height: 2.5px;
-      background: rgba(255, 255, 255, 0.5);
-      width: 80%;
-    .divider-line {
-      display: block;
-      width: 100px;
-      height: 3px;
-      background-color: #fff;
-margin: 0 auto;
-}
+  /* Divider line styling */
+  hr.section-divider {
+    border: none;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* space below the line */
+  }
 
-.intro {
-max-width: 900px;
-      margin: 25px auto 80px auto; /* reduced top margin */
-      margin: 40px auto 80px auto;
-padding: 0 20px;
-text-align: center;
-}
-.intro h2 {
-font-size: 2.5em;
-margin-bottom: 0.5em;
-color: #fff;
-}
-.intro p {
-font-size: 1.1em;
-color: #f0f0f0;
-max-width: 700px;
-margin: 0 auto;
-}
+  .intro {
+    max-width: 900px;
+    margin: 0 auto 80px auto; /* shifted text closer to divider */
+    padding: 0 20px;
+    text-align: center;
+  }
+  .intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #fff;
+  }
+  .intro p {
+    font-size: 1.1em;
+    color: #f0f0f0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-.shop-btn {
-display: inline-block;
-margin-top: 20px;
-padding: 12px 30px;
-background-color: #c8102e;
-color: white;
-font-weight: 700;
-font-size: 1.1em;
-text-decoration: none;
-border-radius: 6px;
-transition: background-color 0.3s ease;
-}
-.shop-btn:hover {
-background-color: #a30d23;
-}
+  .shop-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #c8102e;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  .shop-btn:hover {
+    background-color: #a30d23;
+  }
 
-footer {
-background: #000;
-color: #b5e7a0;
-text-align: center;
-padding: 18px 10px;
-font-size: 0.9em;
-font-weight: 600;
-letter-spacing: 1px;
-}
+  footer {
+    background: #000;
+    color: #b5e7a0;
+    text-align: center;
+    padding: 18px 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
 </style>
 </head>
 <body>
 
 <nav>
-<div class="logo">HomeStyle</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact Us</a></li>
-</ul>
+  <div class="logo">HomeStyle</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
 </nav>
 
 <section class="hero">
-<h1>Elevate Your Living Space</h1>
-<p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
-    <hr class="section-divider" />
-    <div class="divider-line"></div>
+  <h1>Elevate Your Living Space</h1>
+  <p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
+  <hr class="section-divider" />
 </section>
 
 <section class="intro">
-<h2>Thoughtfully chosen, beautifully made.</h2>
-<p>From timeless decor pieces to modern accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
-<a href="products.html" class="shop-btn">Shop Now!</a>
+  <h2>Thoughtfully chosen, beautifully made.</h2>
+  <p>From timeless decor pieces to modern accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
+  <a href="products.html" class="shop-btn">Shop Now!</a>
 </section>
 
 <footer>
-&copy; 2025 HomeStyle. All rights reserved.
+  &copy; 2025 HomeStyle. All rights reserved.
 </footer>
 
 </body>
