@@ -81,19 +81,14 @@
       margin: 0 auto;
       color: #fff;
     }
-    /* Divider line styling */
-    .divider-line {
-      display: block;
-      width: 100vw; /* full viewport width */
-      max-width: 100%;
-      height: auto;
-      margin: 20px 0 0 0; /* space above the line */
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      object-fit: contain;
+
+    /* Clean horizontal divider */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+      margin: 40px auto;
+      width: 80%;
     }
 
     /* Intro Section */
@@ -159,7 +154,7 @@
   <section class="hero">
     <h1>Elevate Your Living Space</h1>
     <p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
-    <img src="images/whitedividerlineforhomepage.png" alt="Divider line" class="divider-line" />
+    <hr class="section-divider" />
   </section>
 
   <section class="intro">
