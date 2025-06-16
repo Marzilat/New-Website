@@ -75,22 +75,27 @@
       margin: 0 auto;
     }
 
-    hr.section-divider {
-      height: 3px;
-      width: 100%;
-      border: none;
-      background: rgba(255, 255, 255, 0.7);
-      transform: scaleX(0);
-      transform-origin: center;
-      animation: growLine 20s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      will-change: transform;
-    }
+   hr.section-divider {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: growLine 6s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  transform-origin: center;
+}
 
-    @keyframes growLine {
-      to {
-        transform: scaleX(1);
-      }
-    }
+@keyframes growLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
 
     .intro {
       max-width: 900px;
