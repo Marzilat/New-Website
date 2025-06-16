@@ -134,19 +134,21 @@
       box-shadow: 0 0 8px 2px rgba(200, 16, 46, 0.5);
     }
 
-    .shop-btn span {
-      display: inline-block;
-      animation: shakeText 0.5s ease-in-out 6s infinite;
-    }
+  .shop-btn span {
+  display: inline-block;
+  animation: shakeLoop 6s infinite ease-in-out;
+}
 
-    @keyframes shakeText {
-      0% { transform: rotate(0deg); }
-      20% { transform: rotate(6deg); }
-      40% { transform: rotate(-6deg); }
-      60% { transform: rotate(4deg); }
-      80% { transform: rotate(-4deg); }
-      100% { transform: rotate(0deg); }
-    }
+@keyframes shakeLoop {
+  0% { transform: rotate(0deg); }
+  2% { transform: rotate(6deg); }
+  4% { transform: rotate(-6deg); }
+  6% { transform: rotate(4deg); }
+  8% { transform: rotate(-4deg); }
+  10% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 
     footer {
       background: #000;
