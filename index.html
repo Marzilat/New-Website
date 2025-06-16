@@ -69,25 +69,26 @@
       margin: 0 auto 40px auto;
     }
 
+    .line-wrapper {
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     hr.section-divider {
       height: 3px;
-      background: rgba(255, 255, 255, 0.7);
+      width: 100%;
       border: none;
-      width: 0;
-      max-width: 900px;
-      margin: 0px auto;
-      animation: growLine 10s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      will-change: width;
+      background: rgba(255, 255, 255, 0.7);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: growLine 6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      will-change: transform;
     }
 
     @keyframes growLine {
-      from {
-        width: 0;
-        opacity: 0.4;
-      }
       to {
-        width: 100%;
-        opacity: 1;
+        transform: scaleX(1);
       }
     }
 
@@ -153,7 +154,9 @@
   <section class="hero">
     <h1>Elevate Your Living Space</h1>
     <p>Discover modern home accessories curated for interior lovers who appreciate clean design and subtle elegance.</p>
-    <hr class="section-divider" />
+    <div class="line-wrapper">
+      <hr class="section-divider" />
+    </div>
   </section>
 
   <section class="intro">
