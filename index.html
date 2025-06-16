@@ -125,23 +125,27 @@
       text-decoration: none;
       border-radius: 6px;
       transition: background-color 0.3s ease, box-shadow 0.4s ease;
-      animation: pulseGlow 6s ease-in-out infinite;
       cursor: pointer;
+      position: relative;
     }
 
     .shop-btn:hover {
       background-color: #a30d23;
-      box-shadow: 0 0 12px 3px rgba(200, 16, 46, 0.7);
-      animation: none;
+      box-shadow: 0 0 8px 2px rgba(200, 16, 46, 0.5);
     }
 
-    @keyframes pulseGlow {
-      0%, 100% {
-        box-shadow: 0 0 5px 0 rgba(200, 16, 46, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 15px 5px rgba(200, 16, 46, 0.9);
-      }
+    .shop-btn span {
+      display: inline-block;
+      animation: shakeText 0.5s ease-in-out 6s infinite;
+    }
+
+    @keyframes shakeText {
+      0% { transform: rotate(0deg); }
+      20% { transform: rotate(6deg); }
+      40% { transform: rotate(-6deg); }
+      60% { transform: rotate(4deg); }
+      80% { transform: rotate(-4deg); }
+      100% { transform: rotate(0deg); }
     }
 
     footer {
@@ -178,7 +182,7 @@
   <section class="intro">
     <h2>Thoughtfully chosen, beautifully made.</h2>
     <p>From timeless decor pieces to modern accents, we bring you the finest selections to make your house a home. Quality and style, balanced perfectly.</p>
-    <a href="products.html" class="shop-btn">Shop Now!</a>
+    <a href="products.html" class="shop-btn"><span>Shop Now!</span></a>
   </section>
 
   <footer>
