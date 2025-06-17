@@ -87,12 +87,8 @@
     }
 
     @keyframes growLine {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     .intro {
@@ -130,32 +126,31 @@
     }
 
     .shop-btn:hover {
-      background-color: #a30d23;
+      background-color: #b21228; /* slightly lighter than before */
       box-shadow: 0 0 8px 2px rgba(200, 16, 46, 0.5);
     }
 
-  .shop-btn span {
-  display: inline-block;
-  animation: shakeLoop 6s infinite ease-in-out;
-}
+    .shop-btn span {
+      display: inline-block;
+      animation: shakeLoop 6s infinite ease-in-out;
+    }
 
-@keyframes shakeLoop {
-  0% { transform: rotate(0deg); }
-  2% { transform: rotate(6deg); }
-  4% { transform: rotate(-6deg); }
-  6% { transform: rotate(4deg); }
-  8% { transform: rotate(-4deg); }
-  10% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
-}
-
+    @keyframes shakeLoop {
+      0% { transform: rotate(0deg); }
+      2% { transform: rotate(6deg); }
+      4% { transform: rotate(-6deg); }
+      6% { transform: rotate(4deg); }
+      8% { transform: rotate(-4deg); }
+      10% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
 
     footer {
       background: #000;
-      color: #b5e7a0;
-      text-align: center;
-      padding: 18px 10px;
-      font-size: 0.9em;
+      color: #fff;
+      text-align: left;
+      padding: 18px 30px;
+      font-size: 0.95em;
       font-weight: 600;
       letter-spacing: 1px;
     }
