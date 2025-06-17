@@ -151,8 +151,8 @@
       background: #000;
       color: #fff;
       text-align: left;
-      /* equal top & bottom padding for centered content */
-      padding: 12px var(--side-gap);
+      /* equal top & bottom padding, enforced */
+      padding: 12px var(--side-gap) !important;
       font-size: 0.95em;
       font-weight: 600;
       letter-spacing: 1px;
@@ -166,6 +166,7 @@
       padding-left: 0;
     }
     .footer-icon img {
+      display: block;           /* remove text-descender gap */
       height: 26px;
       width: 26px;
       object-fit: contain;
