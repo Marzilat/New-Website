@@ -52,9 +52,12 @@
       font-weight: 600;
       transition: color 0.3s ease;
     }
-    nav ul li a:hover,
-    nav ul li a.active {
+    nav ul li a:hover {
       color: #c8102e;
+      font-weight: 700;
+    }
+    nav ul li a.active {
+      color: #fff; /* stay white on active */
       font-weight: 700;
     }
 
@@ -141,7 +144,7 @@
       background: #a30d23;
     }
 
-    /* Footer (matches index & about) */
+    /* Footer */
     footer {
       background: #000;
       color: #fff;
@@ -159,14 +162,14 @@
     .footer-text {
       padding-left: 0;
     }
-    .footer-icon img {
+    .footer-icon a img {
       display: block;
       height: 26px;
       width: 26px;
       object-fit: contain;
       transition: transform 0.3s ease;
     }
-    .footer-icon img:hover {
+    .footer-icon a img:hover {
       transform: scale(1.2);
     }
   </style>
@@ -253,5 +256,12 @@
     <div class="footer-content">
       <div class="footer-text">&copy; 2025 HomeStyle. All rights reserved.</div>
       <div class="footer-icon">
-        <a href="#" target="_blank">
-          <img src
+        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+          <img src="images/Instagram_Glyph_White.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
