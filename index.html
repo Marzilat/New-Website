@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Modern Home Accessories</title>
   <style>
-    /* Define a single side‐gap variable for consistent padding */
+    /* Define a single side-gap variable for consistent padding */
     :root {
       --side-gap: 30px;
     }
@@ -151,7 +151,8 @@
       background: #000;
       color: #fff;
       text-align: left;
-      padding: 18px var(--side-gap);
+      /* equal top & bottom padding for centered content */
+      padding: 12px var(--side-gap);
       font-size: 0.95em;
       font-weight: 600;
       letter-spacing: 1px;
@@ -162,7 +163,7 @@
       align-items: center;
     }
     .footer-text {
-      padding-left: 0; /* no extra offset */
+      padding-left: 0;
     }
     .footer-icon img {
       height: 26px;
