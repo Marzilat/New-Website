@@ -5,24 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Modern Home Accessories</title>
   <style>
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-}
-
-.footer-text {
+footer {
+  background: #000;
   color: #fff;
   font-size: 0.95em;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+}
+
+.footer-text {
+  color: #fff;
+  padding-left: 30px; /* matches nav logo padding */
+}
+
+.footer-icon {
+  padding-right: 35px; /* slightly more spacing on the right */
+}
+
 .footer-icon img {
   height: 26px;
   width: 26px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-icon img:hover {
+  transform: scale(1.2); /* grows on hover */
 }
 
     body {
