@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - HomeStyle</title>
   <style>
-    html {
-  overflow-y: scroll;
-}
+    /* Define global side-gap for consistency */
+    :root {
+      --side-gap: 30px;
+    }
 
+    /* Base Styling */
+    * {
+      box-sizing: border-box;
+    }
     html, body {
       height: 100%;
       margin: 0;
@@ -24,9 +29,10 @@
       flex: 1;
     }
 
+    /* Navigation Bar */
     nav {
       background: #000;
-      padding: 15px 30px;
+      padding: 15px var(--side-gap);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -34,14 +40,12 @@
       top: 0;
       z-index: 10;
     }
-
     nav .logo {
       color: #fff;
       font-size: 1.8em;
       font-weight: 700;
       letter-spacing: 2px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -49,45 +53,63 @@
       margin: 0;
       padding: 0;
     }
-
     nav ul li a {
       color: #eee;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
-
-    nav ul li a:hover {
+    nav ul li a:hover,
+    nav ul li a.active {
       color: #c8102e;
+      font-weight: 700;
     }
 
+    /* About Section */
     .about {
       max-width: 800px;
       margin: 60px auto;
-      padding: 20px;
+      padding: 0 var(--side-gap);
       text-align: center;
     }
-
     .about h1 {
       font-size: 2.8em;
       margin-bottom: 20px;
       letter-spacing: 1.5px;
     }
-
     .about p {
       font-size: 1.1em;
       color: #333;
       line-height: 1.8;
     }
 
+    /* Footer (matches index & products) */
     footer {
       background: #000;
-      color: #b5e7a0;
-      text-align: center;
-      padding: 18px 10px;
-      font-size: 0.9em;
+      color: #fff;
+      text-align: left;
+      padding: 24px var(--side-gap) !important;
+      font-size: 0.95em;
       font-weight: 600;
       letter-spacing: 1px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-text {
+      padding-left: 0;
+    }
+    .footer-icon img {
+      display: block;
+      height: 26px;
+      width: 26px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .footer-icon img:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
@@ -98,7 +120,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
@@ -106,16 +128,23 @@
     <section class="about">
       <h1>About HomeStyle</h1>
       <p>
-    At HomeStyle, we believe your home should be a reflection of comfort, elegance, and your personal taste.
-Our mission is to offer unique and high-quality home accessories that blend timeless beauty with everyday practicality.
-From elegant vases and stylish lamps to cozy cushions and decorative pieces, each item is carefully selected to add warmth and character to your living space.
-We take pride in curating products that not only look beautiful but also serve a purpose — helping you create a home that feels welcoming, balanced, and truly your own.
+        At HomeStyle, we believe your home should be a reflection of comfort, elegance, and your personal taste.
+        Our mission is to offer unique and high-quality home accessories that blend timeless beauty with everyday practicality.
+        From elegant vases and stylish lamps to cozy cushions and decorative pieces, each item is carefully selected to add warmth and character to your living space.
+        We take pride in curating products that not only look beautiful but also serve a purpose—helping you create a home that feels welcoming, balanced, and truly your own.
       </p>
     </section>
   </div>
 
   <footer>
-    &copy; 2025 HomeStyle. All rights reserved.
+    <div class="footer-content">
+      <div class="footer-text">&copy; 2025 HomeStyle. All rights reserved.</div>
+      <div class="footer-icon">
+        <a href="#" target="_blank">
+          <img src="images/Instagram_Glyph_White.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
