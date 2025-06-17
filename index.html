@@ -182,17 +182,20 @@
     }
   </style>
 
-  <script>
-    // Make the button shake every 6 seconds
-    window.addEventListener('DOMContentLoaded', () => {
-      const text = document.querySelector('.shake-text');
-      setInterval(() => {
-        text.classList.remove('shake-loop');
-        void text.offsetWidth; // Trigger reflow to restart animation
-        text.classList.add('shake-loop');
-      }, 6000);
-    });
-  </script>
+<script>
+  // Make the button shake every 6 seconds in a loop
+  window.addEventListener('DOMContentLoaded', () => {
+    const text = document.querySelector('.shake-text');
+
+    setInterval(() => {
+      text.classList.remove('shake-loop');
+      // Force reflow to reset animation
+      void text.offsetWidth;
+      text.classList.add('shake-loop');
+    }, 6000);
+  });
+</script>
+
 </head>
 <body>
 
