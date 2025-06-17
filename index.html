@@ -122,11 +122,12 @@
       border-radius: 6px;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       position: relative;
+      box-shadow: 0 0 12px rgba(200, 16, 46, 0.6);
     }
 
     .shop-btn:hover {
-      background-color: #a30d23;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      background-color: #b01025;
+      box-shadow: 0 0 18px rgba(200, 16, 46, 0.7);
     }
 
     @keyframes shake {
@@ -137,43 +138,42 @@
       100% { transform: rotate(0deg); }
     }
 
-    .shop-btn .shake-text {
+    .shake-text {
       display: inline-block;
+    }
+
+    /* Controlled shaking every 6s */
+    .shake-text.shaking {
       animation: shake 0.4s ease-in-out;
-      animation-delay: 6s;
-      animation-iteration-count: infinite;
     }
 
     footer {
       background: #000;
-      color: #b5e7a0;
-      text-align: center;
-      padding: 18px 10px;
+      color: #fff;
+      padding: 10px 20px;
       font-size: 0.9em;
       font-weight: 600;
-      letter-spacing: 1px;
-      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .social-icons {
-      margin-top: 12px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      margin: 0 10px;
-      transition: transform 0.3s ease, filter 0.3s ease;
+      display: flex;
+      gap: 10px;
+      align-items: center;
     }
 
     .social-icons img {
       width: 24px;
       height: 24px;
       filter: brightness(100%);
+      transition: transform 0.3s ease;
     }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+    .social-icons a:hover img {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -206,17 +206,24 @@
   </section>
 
   <footer>
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <div style="color: #fff; font-weight: 600; font-size: 0.9em; padding: 5px 10px;">
-      &copy; 2025 HomeStyle. All rights reserved.
-    </div>
+    <div>&copy; 2025 HomeStyle. All rights reserved.</div>
     <div class="social-icons">
       <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
         <img src="images/Instagram_Glyph_White.png" alt="Instagram" />
       </a>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <script>
+    // Shop Now shake every 6s
+    setInterval(() => {
+      const text = document.querySelector('.shake-text');
+      text.classList.add('shaking');
+      setTimeout(() => {
+        text.classList.remove('shaking');
+      }, 400); // match animation duration
+    }, 6000);
+  </script>
 
 </body>
 </html>
